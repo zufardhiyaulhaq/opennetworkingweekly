@@ -1,0 +1,37 @@
+
+# define how many completed & failed pod jobs
+jobHistoryLimit: 1
+
+# define time to exec the cronjob
+cronSchedule: "0 8 * * 4"
+
+# image cronjob configuration
+image:
+  name: "opennetworkingweekly"
+  repository: "zufardhiyaulhaq/opennetworkingweekly"
+  tag: "latest"
+
+#############################
+# envoronment configuration #
+#############################
+
+# github configuration to store the CRDs
+github:
+  token: "your-token"
+  organization: "zufardhiyaulhaq"
+  repository: "community-ops"
+  repository_path: "./manifest/opennetworking-community/"
+  branch: "master"
+
+# community name for CRDs
+community: "Open Networking Indonesia Community"
+
+# tag for CRDs
+tags: "weekly,onf"
+
+# namespace for CRDs
+namespace: "opennetworking-community"
+
+# image for CRDs
+image_url: "https://opennetworking.org/wp-content/uploads/2020/09/ONF-logo-og.png"
+
