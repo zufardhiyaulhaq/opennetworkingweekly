@@ -5,12 +5,11 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/yaml.v2"
-
 	communityv1alpha1 "github.com/cloudnative-id/community-operator/pkg/apis/community/v1alpha1"
 	"github.com/zufardhiyaulhaq/opennetworkingweekly/handlers"
 	"github.com/zufardhiyaulhaq/opennetworkingweekly/models"
 	"github.com/zufardhiyaulhaq/opennetworkingweekly/pkg/scrappers"
+	"gopkg.in/yaml.v2"
 )
 
 func main() {
