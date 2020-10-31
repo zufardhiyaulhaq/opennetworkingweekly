@@ -52,8 +52,9 @@ func main() {
 
 	if newContentLength != currentContentLength {
 		handler.UpdateFile("content.yaml", "update OpenNetworking Weekly content", openNetworkingWeeklycontentByte)
+		log.Printf("[opennetworkingweekly] Update content with new weekly content")
 	} else {
-		log.Printf("[opennetworkingweekly] no update about OpenNetworking")
+		log.Printf("[opennetworkingweekly] no update about Open Networking")
 		return
 	}
 
@@ -79,13 +80,13 @@ func main() {
 		log.Fatal(err)
 	}
 	handler.UpdateFile("content.yaml", "update OpenNetworking Weekly content", openNetworkingWeeklycontentByte)
+	log.Printf("[opennetworkingweekly] Update delivered status content")
 
 	//Init builder
 	builder := Builder{}
 
 	// Build
-	location, _ := time.LoadLocation("Asia/Jakarta")
-	time := time.Now().In(location).Format("02-01-2006")
+	time := time.Now().Format("02-01-2006")
 	weeklyName = "Open Networking Weekly " + time
 
 	builder.build(weeklyName, weeklyData)
@@ -93,4 +94,5 @@ func main() {
 
 	commitMessage := "Weekly: Add " + weeklyName
 	CreateFile(handler, strings.ToLower(strings.ReplaceAll(weeklyName, " ", "-"))+".yaml", commitMessage, weeklyCRD)
+	log.Printf("[opennetworkingweekly] Create Weekly manifest")
 }
