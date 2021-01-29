@@ -1,5 +1,5 @@
-# OpenNetworkingweekly
-Get data from https://opennetworking.org/ and create Weekly CRDs based on community-operator & push to github
+# opennetworkingweekly charts
+Helm chart for opennetworkingweeklys
 
 ### Installing the charts
 ```
@@ -25,3 +25,5 @@ helm install zufardhiyaulhaq/opennetworkingweekly --name-template opennetworking
 | jobHistoryLimit | int | `1` |  |
 | namespace | string | `"opennetworking-community"` |  |
 | tags | string | `"weekly,onf"` |  |
+
+check & modify values.yaml for details
